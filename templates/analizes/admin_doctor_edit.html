@@ -1,0 +1,10 @@
+<h1>Doctors Edit</h1>
+<form  method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+   <p>{{ profile_form.as_p }} {{ profile_form.errors }}</p>
+   <input type="submit"  name='_save_profile' value="Save_profile  ">
+</form>
+<form  method="post" >{% csrf_token %}1{{ password_form.errors }}1
+   {{ password_form.as_p }} {{ password_form.errors }}
+   <input type="submit"  name='_save_new_password' value="Save_new_password  ">
+</form>

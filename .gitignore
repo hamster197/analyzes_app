@@ -1,0 +1,8 @@
+*.pyc
+*~
+__pycache__
+db.sqlite3
+#/app/settings.py
+/analizes/migrations
+/.idea
+sec.py

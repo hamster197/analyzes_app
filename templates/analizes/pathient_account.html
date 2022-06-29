@@ -1,0 +1,23 @@
+<h1>Patient Account</h1>
+<p>{{ patient.first_name }} {{ patient.last_name }}</p>
+<p>{{ patient.sport }} {{ patient.weight }} {{ patient.weight }}</p>
+<h2>Recomendations</h2>
+{% for recomendation in recomendations %}
+<p>{{ recomendation.name }} {{ recomendation.creation_date }} {{ recomendation.type }}
+   {{ recomendation.author.first_name }} {{ recomendation.author.last_name }}
+</p>
+{{ recomendation.discription }}
+{% for attach in recomendation.attach.all %}
+<p>{{ attach.name }}</p>
+{% endfor %}
+{% endfor %}
+{% if request.user.groups.get.name == 'doctors' %}
+{% if form %}
+<form  method="post">
+   {% csrf_token %}
+   <h3>Create a new recomendation {{ form.errors }}</h3>
+   {{ form.as_p }}
+   <input type="submit" name="_recomendation_save"  value="save recomendation">
+
+</form>{% endif %}
+{% endif %}

@@ -1,0 +1,15 @@
+<h1> Analizes</h1>
+{% for analize in analizes %}
+<p>{{ analize.name }} {{ analize.rezult }} {{ analize.creation_date }}</p>
+{% endfor %}
+{% if request.user.groups.get.name == 'doctors' %}
+<form  method="post">
+   {% csrf_token %}
+   <h1>Add new data</h1>
+   {{ formset.management_form }}
+   {% for form in formset %}
+   <p>{{ form.as_p }}</p>
+   {% endfor %}
+   <input type="submit"  value="_save_new_analize">
+</form>
+{% endif %}
