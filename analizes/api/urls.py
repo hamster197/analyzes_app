@@ -29,8 +29,8 @@ urlpatterns = [
     path('v1/', include(doctor_edit_router.urls)),
     path('v1/', include(doctor_position_router.urls)),
     path('v1/', include(admin_recomendation_router.urls)),
-    path('v1/patient_detail/<pk>/', PatientsDetail.as_view(),),
-    path('v1/patient_detail/recomendations/<pk>/', DoctorPatientsRecomendationsList.as_view(),),
-    path('v1/patient_detail/recomendations_quide/<pk>/', QuideDoctorPatientsRecomendationsList.as_view(),),
-    path('v1/patinet_analizes/add/<pk>/', PatientAnalizesEdits.as_view(),),
+    path('v1/patient_detail/<int:pk>/', PatientsDetail.as_view(),),
+    path('v1/patient_detail/recomendations/<int:pk>/', DoctorPatientsRecomendationsList.as_view(),),
+    path('v1/patient_detail/recomendations_quide/<int:pk>/', QuideDoctorPatientsRecomendationsList.as_view(),),
+    path('v1/patinet_analizes/add/<int:pk>/', PatientAnalizesEdits.as_view(),),
 ]
